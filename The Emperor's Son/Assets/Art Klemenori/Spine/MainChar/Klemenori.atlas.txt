@@ -1,0 +1,83 @@
+
+Klemenori.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Character1/Pantalon_copy
+  rotate: false
+  xy: 655, 1500
+  size: 279, 397
+  orig: 279, 397
+  offset: 0, 0
+  index: -1
+Character1/Picior_copy
+  rotate: false
+  xy: 370, 1083
+  size: 313, 415
+  orig: 313, 415
+  offset: 0, 0
+  index: -1
+Character1/Pantalon
+  rotate: false
+  xy: 370, 1500
+  size: 283, 426
+  orig: 283, 426
+  offset: 0, 0
+  index: -1
+Character1/Picior
+  rotate: false
+  xy: 936, 1389
+  size: 188, 406
+  orig: 188, 406
+  offset: 0, 0
+  index: -1
+Character1/Cap
+  rotate: false
+  xy: 940, 1083
+  size: 251, 295
+  orig: 251, 295
+  offset: 0, 0
+  index: -1
+Character1/Antebrat _0
+  rotate: false
+  xy: 685, 1083
+  size: 253, 304
+  orig: 253, 304
+  offset: 0, 0
+  index: -1
+Character1/Brat_0
+  rotate: false
+  xy: 1, 1756
+  size: 266, 203
+  orig: 266, 203
+  offset: 0, 0
+  index: -1
+Character1/Corp
+  rotate: false
+  xy: 1, 1083
+  size: 367, 671
+  orig: 367, 671
+  offset: 0, 0
+  index: -1
+Character1/Antebrat_
+  rotate: false
+  xy: 1126, 1380
+  size: 216, 331
+  orig: 216, 331
+  offset: 0, 0
+  index: -1
+sword
+  rotate: false
+  xy: 1, 1
+  size: 1920, 1080
+  orig: 1920, 1080
+  offset: 0, 0
+  index: -1
+Character1/Brat
+  rotate: false
+  xy: 1193, 1083
+  size: 275, 183
+  orig: 275, 183
+  offset: 0, 0
+  index: -1
