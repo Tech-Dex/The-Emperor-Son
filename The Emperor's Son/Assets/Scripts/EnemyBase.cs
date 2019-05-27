@@ -45,12 +45,13 @@ public class EnemyBase : PhysicsObject {
 	private RaycastHit2D leftWall;
 	private RaycastHit2D rightLedge;
 	private RaycastHit2D leftLedge;
-
+	private Vector3 origLocalScale;
 	public GameObject keyDrop;
 	void Start(){
 		audioSource = GetComponent<AudioSource>();
 		animatorFunctions = GetComponent<AnimatorFunctions>();
 		SetGroundType ();
+		origLocalScale = transform.localScale;
 
 	}
 
@@ -70,13 +71,13 @@ public class EnemyBase : PhysicsObject {
 			move.x = 1 * directionSmooth;
 
 			//Flip the graphic depending on the speed
-			if (move.x > 0.01f) {
-				if (graphic.transform.localScale.x == -1) {
-					graphic.transform.localScale = new Vector3 (1, transform.localScale.y, transform.localScale.z);
+			if (move.x < 0.01f) {
+				if (graphic.transform.localScale.x < 0) {
+					graphic.transform.localScale = new Vector3 (origLocalScale.x, transform.localScale.y, transform.localScale.z);
 				}
-			} else if (move.x < -0.01f) {
-				if (graphic.transform.localScale.x == 1) {
-					graphic.transform.localScale = new Vector3 (-1, transform.localScale.y, transform.localScale.z);
+			} else if (move.x > -0.01f) {
+				if (graphic.transform.localScale.x > 0) {
+					graphic.transform.localScale = new Vector3 (-origLocalScale.x, transform.localScale.y, transform.localScale.z);
 				}
 			}
 
