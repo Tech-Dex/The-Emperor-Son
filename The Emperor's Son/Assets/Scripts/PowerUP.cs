@@ -17,7 +17,15 @@ public class PowerUP : MonoBehaviour
     public float multiplySecondJump = 2;
     public float duration = 20f;
 
-	void OnTriggerEnter2D(Collider2D col){
+	[SerializeField] private AudioClip collectSound;
+	[SerializeField] private AudioClip bounceSound;
+	[SerializeField] private AudioSource audioSource;
+
+	
+    void Start(){
+        audioSource = GetComponent<AudioSource> ();
+    }
+    void OnTriggerEnter2D(Collider2D col){
 		if (col.gameObject == NewPlayer.Instance.gameObject) {
 			StartCoroutine(PickUp (col));
 		}
@@ -42,7 +50,12 @@ public class PowerUP : MonoBehaviour
 
             stats.maxHealth -= multiplyMaxHP;
 
-            Destroy(gameObject);
+        GameManager.Instance.audioSource.PlayOneShot (collectSound);
+		if (transform.parent.GetComponent<Bouncer> () != null) {
+			Destroy (transform.parent.gameObject);
+		} else {
+			Destroy (gameObject);
+		}
         }
 
 
@@ -56,7 +69,12 @@ public class PowerUP : MonoBehaviour
 
             stats.maxSpeed -= multiplySpeed;
 
-            Destroy(gameObject);
+        GameManager.Instance.audioSource.PlayOneShot (collectSound);
+		if (transform.parent.GetComponent<Bouncer> () != null) {
+			Destroy (transform.parent.gameObject);
+		} else {
+			Destroy (gameObject);
+		}
         }
 
         if(jumpPowerUp == true){
@@ -71,14 +89,24 @@ public class PowerUP : MonoBehaviour
             stats.jumpTakeOffSpeed -= multiplyFirstJump;
             stats.secondJumpTakeOffSpeed -= multiplySecondJump;
 
-            Destroy(gameObject);
+        GameManager.Instance.audioSource.PlayOneShot (collectSound);
+		if (transform.parent.GetComponent<Bouncer> () != null) {
+			Destroy (transform.parent.gameObject);
+		} else {
+			Destroy (gameObject);
+		}
 
         }
 
         if(regenHpUp == true){
             if(stats.maxHealth >= stats.health + regenHp){
                 stats.health += regenHp;
-                Destroy(gameObject);
+        GameManager.Instance.audioSource.PlayOneShot (collectSound);
+		if (transform.parent.GetComponent<Bouncer> () != null) {
+			Destroy (transform.parent.gameObject);
+		} else {
+			Destroy (gameObject);
+		}
             }
 
         }

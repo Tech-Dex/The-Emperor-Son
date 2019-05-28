@@ -207,6 +207,7 @@ public class EnemyBase : PhysicsObject {
 		recovering = true;
 		if(health <= 0){
 			Die();
+			StartCoroutine(timer());
 		}
 	}
 

@@ -23,14 +23,16 @@ public class SceneLoadTrigger : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter2D(Collider2D col){
+	void OnTriggerStay2D(Collider2D col){
 			if (col.gameObject == NewPlayer.Instance.gameObject ) {
+				if((Input.GetAxis ("Submit") > 0) || (Input.GetKeyDown("joystick button 1"))){
 				GameManager.Instance.playerUI.animator.SetTrigger ("coverScreen");
 				GameManager.Instance.playerUI.loadSceneName = loadSceneName;
 				GameManager.Instance.playerUI.spawnToObject = spawnToObject;
 				enabled = false;
 				Die();
 				ResetLevel();
+				}
 			}
 	}
 
