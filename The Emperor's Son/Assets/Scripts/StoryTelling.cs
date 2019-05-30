@@ -11,14 +11,19 @@ public class StoryTelling : MonoBehaviour
     private int index;
     public float typingSpeed;
 
-    public bool ok = true;
-
+    public bool ok = true ;
+    Coroutine MyCoroutineReference;
+    [SerializeField] private Animator icon;
     void OnTriggerStay2D(Collider2D col){
         if (col.gameObject == NewPlayer.Instance.gameObject && ok){
-            animator.SetBool ("active", true);
-            
-            StartCoroutine(Type());
-            ok = false;
+            icon.SetBool ("active", true);
+            if ((Input.GetAxis ("Submit") > 0) || (Input.GetKeyDown("joystick button 1") )) {
+                textDisplay.text = string.Empty;
+                animator.SetBool ("active", true);
+                icon.SetBool ("active", false);
+                MyCoroutineReference = StartCoroutine(Type());
+                ok = false;
+            }
         }
     }
 
@@ -26,6 +31,10 @@ public class StoryTelling : MonoBehaviour
        
 		if (col.gameObject == NewPlayer.Instance.gameObject) {
 		    animator.SetBool ("active", false);
+            icon.SetBool ("active", false);
+            StopCoroutine(MyCoroutineReference);
+            textDisplay.ClearMesh();
+            ok = true;
         }
 	}
 
@@ -34,7 +43,7 @@ public class StoryTelling : MonoBehaviour
         foreach (char letter in sentences[index].ToCharArray())
         {
             textDisplay.text += letter;
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(typingSpeed);
         }
     }
 
