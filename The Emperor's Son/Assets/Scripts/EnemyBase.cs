@@ -50,12 +50,12 @@ public class EnemyBase : PhysicsObject {
 	private Vector3 origLocalScale;
 	public GameObject keyDrop;
 	public Slider healthBarSlide;
-
 	void Start(){
 		audioSource = GetComponent<AudioSource>();
 		animatorFunctions = GetComponent<AnimatorFunctions>();
 		SetGroundType ();
 		origLocalScale = transform.localScale;
+
 
 	}
 
@@ -104,6 +104,7 @@ public class EnemyBase : PhysicsObject {
 				
 			if (followPlayer) {
 				if(BossShake){
+					healthBarSlide.gameObject.SetActive(true);
 					cameraEffect.Shake (7, 1);
 					GamePad.SetVibration(0, 0.25f, 0.25f);
                     StartCoroutine(timer());
@@ -117,6 +118,8 @@ public class EnemyBase : PhysicsObject {
 			} else {
 				//Allow enemy to instantly change direction when not following player
 				directionSmooth = direction;
+				if(BossShake)
+					healthBarSlide.gameObject.SetActive(false);
 			}
 
 

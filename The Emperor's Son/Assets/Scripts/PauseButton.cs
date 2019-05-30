@@ -23,13 +23,19 @@ public class PauseButton : MonoBehaviour
 					StartCoroutine(Coroutine());
 					if(thisIndex == 0){
 						something.Resume();
-
 					}
 					if(thisIndex == 1){
-						SceneManager.LoadScene("Menu");
-						Time.timeScale = 1f;
+						Scene resetLevel = SceneManager.GetActiveScene();
+    					SceneManager.LoadScene (resetLevel.buildIndex);
+						something.Resume();
+						
 					}
-					if(thisIndex == 2)
+					if(thisIndex == 2){
+						SceneManager.LoadScene("Menu");
+						something.Resume();
+						
+					}
+					if(thisIndex == 3)
 						Application.Quit();
 
 			}else if (animator.GetBool ("pressed")){
