@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Spine;
 using Spine.Unity;
 using XInputDotNetPure;
@@ -17,7 +18,8 @@ public class EnemyBase : PhysicsObject {
 	public float direction = 1;
 	[SerializeField] public float changeDirectionEase = 1;
 	private float directionSmooth = 1;
-	[SerializeField] private int health = 3;
+	[SerializeField] public int health = 3;
+
 	[SerializeField] private GameObject deathParticles;
     public float jumpTakeOffSpeed = 7;
 	public bool jump = false;
@@ -47,6 +49,8 @@ public class EnemyBase : PhysicsObject {
 	private RaycastHit2D leftLedge;
 	private Vector3 origLocalScale;
 	public GameObject keyDrop;
+	public Slider healthBarSlide;
+
 	void Start(){
 		audioSource = GetComponent<AudioSource>();
 		animatorFunctions = GetComponent<AnimatorFunctions>();
@@ -64,6 +68,7 @@ public class EnemyBase : PhysicsObject {
 
     protected override void ComputeVelocity()
     {
+		
 		Vector2 move = Vector2.zero;
 		playerDifference = NewPlayer.Instance.gameObject.transform.position.x - transform.position.x;
 		directionSmooth += (direction - directionSmooth) * Time.deltaTime * changeDirectionEase;
@@ -174,6 +179,7 @@ public class EnemyBase : PhysicsObject {
 		animator.SetBool ("grounded", grounded);
         animator.SetFloat ("velocityX", Mathf.Abs (velocity.x) / maxSpeed);
         targetVelocity = move * maxSpeed;
+		
     }
 
 	public void SetGroundType(){
@@ -198,6 +204,7 @@ public class EnemyBase : PhysicsObject {
 	public void Hit(int launchDirection){
 		NewPlayer.Instance.cameraEffect.Shake (100,1);
 		health -= 1;
+		healthBarSlide.value = health;
 		animator.SetTrigger ("hurt");
 		velocity.y = launchPower;
 
