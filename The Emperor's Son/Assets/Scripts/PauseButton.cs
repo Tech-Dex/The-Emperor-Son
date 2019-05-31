@@ -27,11 +27,13 @@ public class PauseButton : MonoBehaviour
 					if(thisIndex == 1){
 						Scene resetLevel = SceneManager.GetActiveScene();
     					SceneManager.LoadScene (resetLevel.buildIndex);
+						GameManager.Instance.killCounter = 0;
 						something.Resume();
 						
 					}
 					if(thisIndex == 2){
 						SceneManager.LoadScene("Menu");
+						GameManager.Instance.killCounter = 0;
 						something.Resume();
 						
 					}

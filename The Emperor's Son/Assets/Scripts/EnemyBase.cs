@@ -225,6 +225,8 @@ public class EnemyBase : PhysicsObject {
 		deathParticles.SetActive (true);
 		deathParticles.transform.parent = transform.parent;
 		Destroy (gameObject);
+		GameManager.Instance.killCounter += 1;
+		Debug.Log("Inamici omorati: " + GameManager.Instance.killCounter);
 		Instantiate(keyDrop,transform.position,Quaternion.identity);
 	}
 
