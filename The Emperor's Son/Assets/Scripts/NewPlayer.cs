@@ -47,7 +47,9 @@ public class NewPlayer : PhysicsObject {
 	}
 
 	void Start(){
-		health = maxHealth;
+        ScoreScript.scoreValue = 0;
+        GamePad.SetVibration(0, 0f, 0f);
+        health = maxHealth;
 		audioSource = GetComponent<AudioSource>();
 		animatorFunctions = GetComponent<AnimatorFunctions>();
 		origLocalScale = transform.localScale;
@@ -164,12 +166,14 @@ public class NewPlayer : PhysicsObject {
 	}
 
 	public void Die(){
-		deathParticles.gameObject.SetActive (true);
+        GamePad.SetVibration(0, 0f, 0f);
+        deathParticles.gameObject.SetActive (true);
 		deathParticles.Emit (10);
 		deathParticles.transform.parent = transform.parent;
 		GameManager.Instance.playerUI.animator.SetTrigger ("coverScreen");
-		GameManager.Instance.playerUI.loadSceneName = SceneManager.GetActiveScene().name;
-		GameManager.Instance.playerUI.spawnToObject = "SpawnStart";
+        //GameManager.Instance.playerUI.loadSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene("DeathMenu");
+        GameManager.Instance.playerUI.spawnToObject = "SpawnStart";
 		GameManager.Instance.playerUI.resetPlayer = true;
 		GetComponent<MeshRenderer> ().enabled = false;
 		Freeze (true);

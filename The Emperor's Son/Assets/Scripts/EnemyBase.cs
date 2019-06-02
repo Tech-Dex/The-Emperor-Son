@@ -222,6 +222,7 @@ public class EnemyBase : PhysicsObject {
 	}
 
 	public void Die(){
+        ScoreScript.scoreValue += 100;
 		deathParticles.SetActive (true);
 		deathParticles.transform.parent = transform.parent;
 		Destroy (gameObject);
