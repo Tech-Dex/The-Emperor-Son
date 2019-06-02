@@ -15,98 +15,122 @@ public class PowerUP : MonoBehaviour
     public float multiplySpeed = 2;
     public float multiplyFirstJump = 4;
     public float multiplySecondJump = 2;
-    public float duration = 20f;
+    public float duration = 10f;
 
-	[SerializeField] private AudioClip collectSound;
-	[SerializeField] private AudioClip bounceSound;
-	[SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip collectSound;
+    [SerializeField] private AudioClip bounceSound;
+    [SerializeField] private AudioSource audioSource;
 
-	
-    void Start(){
-        audioSource = GetComponent<AudioSource> ();
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
     }
-    void OnTriggerEnter2D(Collider2D col){
-		if (col.gameObject == NewPlayer.Instance.gameObject) {
-			StartCoroutine(PickUp (col));
-		}
-	}
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject == NewPlayer.Instance.gameObject)
+        {
+            StartCoroutine(PickUp(col));
+        }
+    }
 
-    IEnumerator PickUp(Collider2D player){
+    IEnumerator PickUp(Collider2D player)
+    {
 
         NewPlayer stats = player.GetComponent<NewPlayer>();
 
-        if(hpPowerUp == true){
+        if (hpPowerUp == true)
+        {
             stats.health += multiplyHP;
             stats.maxHealth += multiplyMaxHP;
 
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             this.gameObject.GetComponent<Collider2D>().enabled = false;
-
+            hpPowerUp = false;
+            GameManager.Instance.audioSource.PlayOneShot(collectSound);
             yield return new WaitForSeconds(duration);
-            if(stats.health - multiplyHP >= 1)
+            if (stats.health - multiplyHP >= 1)
                 stats.health -= multiplyHP;
             else
                 stats.health = 1;
 
             stats.maxHealth -= multiplyMaxHP;
 
-        GameManager.Instance.audioSource.PlayOneShot (collectSound);
-		if (transform.parent.GetComponent<Bouncer> () != null) {
-			Destroy (transform.parent.gameObject);
-		} else {
-			Destroy (gameObject);
-		}
+
+            if (transform.parent.GetComponent<Bouncer>() != null)
+            {
+                Destroy(transform.parent.gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
 
 
-        if(speedPowerUp == true){
+        if (speedPowerUp == true)
+        {
             stats.maxSpeed += multiplySpeed;
 
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             this.gameObject.GetComponent<Collider2D>().enabled = false;
-
+            speedPowerUp = false;
+            GameManager.Instance.audioSource.PlayOneShot(collectSound);
             yield return new WaitForSeconds(duration);
 
             stats.maxSpeed -= multiplySpeed;
 
-        GameManager.Instance.audioSource.PlayOneShot (collectSound);
-		if (transform.parent.GetComponent<Bouncer> () != null) {
-			Destroy (transform.parent.gameObject);
-		} else {
-			Destroy (gameObject);
-		}
+
+            if (transform.parent.GetComponent<Bouncer>() != null)
+            {
+                Destroy(transform.parent.gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
 
-        if(jumpPowerUp == true){
+        if (jumpPowerUp == true)
+        {
             stats.jumpTakeOffSpeed += multiplyFirstJump;
             stats.secondJumpTakeOffSpeed += multiplySecondJump;
 
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             this.gameObject.GetComponent<Collider2D>().enabled = false;
-
+            jumpPowerUp = false;
+            GameManager.Instance.audioSource.PlayOneShot(collectSound);
             yield return new WaitForSeconds(duration);
 
             stats.jumpTakeOffSpeed -= multiplyFirstJump;
             stats.secondJumpTakeOffSpeed -= multiplySecondJump;
 
-        GameManager.Instance.audioSource.PlayOneShot (collectSound);
-		if (transform.parent.GetComponent<Bouncer> () != null) {
-			Destroy (transform.parent.gameObject);
-		} else {
-			Destroy (gameObject);
-		}
+
+            if (transform.parent.GetComponent<Bouncer>() != null)
+            {
+                Destroy(transform.parent.gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
 
         }
 
-        if(regenHpUp == true){
-            if(stats.maxHealth >= stats.health + regenHp){
+        if (regenHpUp == true)
+        {
+            if (stats.maxHealth >= stats.health + regenHp)
+            {
                 stats.health += regenHp;
-        GameManager.Instance.audioSource.PlayOneShot (collectSound);
-		if (transform.parent.GetComponent<Bouncer> () != null) {
-			Destroy (transform.parent.gameObject);
-		} else {
-			Destroy (gameObject);
-		}
+                GameManager.Instance.audioSource.PlayOneShot(collectSound);
+                if (transform.parent.GetComponent<Bouncer>() != null)
+                {
+                    Destroy(transform.parent.gameObject);
+                }
+                else
+                {
+                    Destroy(gameObject);
+                }
             }
 
         }

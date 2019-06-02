@@ -9899,6 +9899,8 @@ MonoBehaviour:
   recoveryCounter: 0
   recoveryTime: 2
   followRange: 8.02
+  BossShake: 0
+  cameraEffect: {fileID: 0}
   layerMask:
     serializedVersion: 2
     m_Bits: 4352
@@ -9906,6 +9908,8 @@ MonoBehaviour:
   animator: {fileID: 95887811548911660}
   jumping: 0
   rayCastOffset: {x: 0.4, y: 0.7}
+  keyDrop: {fileID: 0}
+  healthBarSlide: {fileID: 0}
 --- !u!70 &70363700505821846
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
