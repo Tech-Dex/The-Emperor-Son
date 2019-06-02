@@ -171,8 +171,10 @@ public class NewPlayer : PhysicsObject {
 		deathParticles.Emit (10);
 		deathParticles.transform.parent = transform.parent;
 		GameManager.Instance.playerUI.animator.SetTrigger ("coverScreen");
-        //GameManager.Instance.playerUI.loadSceneName = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene("DeathMenu");
+		if(SceneManager.GetActiveScene().name != "EndlessMode")
+        	GameManager.Instance.playerUI.loadSceneName = SceneManager.GetActiveScene().name;
+		else
+    		SceneManager.LoadScene("DeathMenu");
         GameManager.Instance.playerUI.spawnToObject = "SpawnStart";
 		GameManager.Instance.playerUI.resetPlayer = true;
 		GetComponent<MeshRenderer> ().enabled = false;

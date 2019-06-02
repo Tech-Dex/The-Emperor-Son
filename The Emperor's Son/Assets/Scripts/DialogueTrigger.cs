@@ -64,10 +64,11 @@ public class DialogueTrigger : MonoBehaviour {
 	public void UseItem(){
 		if (useItemAnimatorBool != "") {
 			useItemAnimator.SetBool (useItemAnimatorBool, true);
+			StartCoroutine(timer());
 		}
 
 		Collect ();
-
+		
 
 		if (GameManager.Instance.inventory.ContainsKey (requiredItem)) {
 			GameManager.Instance.RemoveInventoryItem (requiredItem);
@@ -91,5 +92,10 @@ public class DialogueTrigger : MonoBehaviour {
 			GameManager.Instance.audioSource.PlayOneShot (getSound);
 		}
 
+	}
+
+	IEnumerator timer(){
+		yield return new WaitForSeconds(7f);
+		useItemAnimator.SetBool (useItemAnimatorBool, false);
 	}
 }

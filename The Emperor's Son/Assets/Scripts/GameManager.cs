@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		audioSource = GetComponent<AudioSource>();
+		Cursor.visible = false;
 	}
 
 	// Use this for initialization

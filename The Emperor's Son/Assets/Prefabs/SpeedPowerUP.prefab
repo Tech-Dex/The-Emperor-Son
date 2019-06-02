@@ -131,7 +131,7 @@ MonoBehaviour:
   multiplySpeed: 2
   multiplyFirstJump: 4
   multiplySecondJump: 2
-  duration: 10
+  duration: 7
   collectSound: {fileID: 8300000, guid: 298038e41a9174325aa6b99c4455f44b, type: 3}
   bounceSound: {fileID: 8300000, guid: 697b854cdabec4c698c51e07ecf440bc, type: 3}
   audioSource: {fileID: 3900719395331373458}
