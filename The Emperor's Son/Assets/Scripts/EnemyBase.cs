@@ -12,7 +12,7 @@ public class EnemyBase : PhysicsObject {
 	[SerializeField] EnemyType enemyType;
 	public AudioSource audioSource;
 	private AnimatorFunctions animatorFunctions;
-	public int damageTaken = 1;
+	
 	public float maxSpeed = 7;
 	private float launch = 1;
 	[SerializeField] float launchPower = 10;
@@ -51,6 +51,15 @@ public class EnemyBase : PhysicsObject {
 	private Vector3 origLocalScale;
 	public GameObject keyDrop;
 	public Slider healthBarSlide;
+
+	private static EnemyBase instance;
+	public static EnemyBase Instance{
+		get 
+		{ 
+			if (instance == null) instance = GameObject.FindObjectOfType<EnemyBase>(); 
+			return instance;
+		}
+	}
 	void Start(){
 		audioSource = GetComponent<AudioSource>();
 		animatorFunctions = GetComponent<AnimatorFunctions>();
@@ -207,7 +216,7 @@ public class EnemyBase : PhysicsObject {
 
 	public void Hit(int launchDirection){
 		NewPlayer.Instance.cameraEffect.Shake (100,1);
-		health -= damageTaken;
+		health -= GameManager.Instance.damageTakenEnemy;
 		healthBarSlide.value = health;
 		animator.SetTrigger ("hurt");
 		velocity.y = launchPower;

@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
 	public int gemAmount;
 	public int TeleportTimer;
 	public int killCounter = 0;
+	public int damageTakenEnemy = 1;
 	public Dictionary<string, Sprite> inventory  = new Dictionary<string, Sprite>();
 	private static GameManager instance;
 

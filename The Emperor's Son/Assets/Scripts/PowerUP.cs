@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PowerUP : MonoBehaviour
 {
-    public bool hpPowerUp = false;
+    public bool DmgPowerUp = false;
     public bool speedPowerUp = false;
     public bool jumpPowerUp = false;
     public bool regenHpUp = false;
@@ -16,7 +16,6 @@ public class PowerUP : MonoBehaviour
     public float multiplyFirstJump = 4;
     public float multiplySecondJump = 2;
     public float duration = 10f;
-
     [SerializeField] private AudioClip collectSound;
     [SerializeField] private AudioClip bounceSound;
     [SerializeField] private AudioSource audioSource;
@@ -24,6 +23,7 @@ public class PowerUP : MonoBehaviour
 
     void Start()
     {
+        
         audioSource = GetComponent<AudioSource>();
     }
     void OnTriggerEnter2D(Collider2D col)
@@ -38,24 +38,17 @@ public class PowerUP : MonoBehaviour
     {
 
         NewPlayer stats = player.GetComponent<NewPlayer>();
-
-        if (hpPowerUp == true)
+        if (DmgPowerUp == true)
         {
-            stats.health += multiplyHP;
-            stats.maxHealth += multiplyMaxHP;
-
+            
+            GameManager.Instance.damageTakenEnemy = 2;
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             this.gameObject.GetComponent<Collider2D>().enabled = false;
-            hpPowerUp = false;
+            DmgPowerUp = false;
             GameManager.Instance.audioSource.PlayOneShot(collectSound);
             yield return new WaitForSeconds(duration);
-            if (stats.health - multiplyHP >= 1)
-                stats.health -= multiplyHP;
-            else
-                stats.health = 1;
 
-            stats.maxHealth -= multiplyMaxHP;
-
+            GameManager.Instance.damageTakenEnemy = 1;
 
             if (transform.parent.GetComponent<Bouncer>() != null)
             {
