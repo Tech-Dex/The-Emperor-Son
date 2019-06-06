@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1b3b4b945939a54ea0b23d3396115fb, type: 3}
-  m_Name: Player_SkeletonData
+  m_Name: Demon_SkeletonData
   m_EditorClassIdentifier: 
   atlasAssets:
-  - {fileID: 11400000, guid: 7f19e8b6473494526a2199419ddd92d4, type: 2}
+  - {fileID: 11400000, guid: df165f6d503c4994fbd2ab855086d2e3, type: 2}
   scale: 0.01
-  skeletonJSON: {fileID: 4900000, guid: f2965915384aa4b759b11f4455bc2d3b, type: 3}
+  skeletonJSON: {fileID: 4900000, guid: 3b845ec0487ea174299f3c82d1cdb82d, type: 3}
   skeletonDataModifiers: []
   fromAnimation: []
   toAnimation: []

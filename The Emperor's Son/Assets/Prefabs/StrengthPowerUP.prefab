@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fa53b7920d2f6194abcd9bf5a0bb87dd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9a7a64a7a0adb6b4f87f0c6d5cd08a11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,7 +96,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.24703157, y: 0.00000017881393}
+  m_Offset: {x: -0.2318871, y: 0.007729709}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -107,7 +107,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.0359366, y: 2.0948424}
+  m_Size: {x: 2.0662255, y: 2.1279035}
   m_EdgeRadius: 0
 --- !u!114 &3900719395331373460
 MonoBehaviour:
@@ -121,9 +121,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12c2813216ff4a84db2d7b73b88d6c9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hpPowerUp: 0
+  DmgPowerUp: 1
   speedPowerUp: 0
-  jumpPowerUp: 1
+  jumpPowerUp: 0
   regenHpUp: 0
   regenHp: 1
   multiplyHP: 3
@@ -340,7 +340,7 @@ GameObject:
   - component: {fileID: 3900719397249441132}
   - component: {fileID: 3900719397249441135}
   m_Layer: 0
-  m_Name: JumpPowerUP
+  m_Name: StrengthPowerUP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/SampleScenes/EndlessMode.unity
     guid: 43e1e7d4397f23440a83de56856b6d8a
+  - enabled: 1
+    path: Assets/SampleScenes/DeathMenu.unity
+    guid: 4cde513362586014fbc98a82f4d0021f
   m_configObjects: {}
