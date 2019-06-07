@@ -33,7 +33,7 @@ public class SceneLoadTrigger : MonoBehaviour {
 				else
 				{
 				GameManager.Instance.playerUI.animator.SetTrigger ("coverScreen");
-				GameManager.Instance.playerUI.loadSceneName = "DeathMenu";
+				GameManager.Instance.playerUI.loadSceneName = "WinMenu";
 				enabled = false;
 				}
 			}
