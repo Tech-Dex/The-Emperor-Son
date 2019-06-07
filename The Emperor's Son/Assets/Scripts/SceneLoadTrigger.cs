@@ -25,27 +25,17 @@ public class SceneLoadTrigger : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D col){
 			if (col.gameObject == NewPlayer.Instance.gameObject ) {
+				if (GameManager.Instance.killCounter <= 5){
 				GameManager.Instance.playerUI.animator.SetTrigger ("coverScreen");
 				GameManager.Instance.playerUI.loadSceneName = loadSceneName;
-				GameManager.Instance.playerUI.spawnToObject = spawnToObject;
 				enabled = false;
-				Die();
-				ResetLevel();
+				}
+				else
+				{
+				GameManager.Instance.playerUI.animator.SetTrigger ("coverScreen");
+				GameManager.Instance.playerUI.loadSceneName = "DeathMenu";
+				enabled = false;
+				}
 			}
-	}
-
-
-	public void Die(){
-		GameManager.Instance.playerUI.animator.SetTrigger ("coverScreen");
-		GameManager.Instance.playerUI.loadSceneName = SceneManager.GetActiveScene().name;
-		GameManager.Instance.playerUI.spawnToObject = "SpawnStart";
-		GameManager.Instance.playerUI.resetPlayer = true;
-	}
-
-	public void ResetLevel(){
-		health = maxHealth;
-		GameManager.Instance.gemAmount = 0;
-		GameManager.Instance.inventory.Clear ();
-	}
-
+}
 }
