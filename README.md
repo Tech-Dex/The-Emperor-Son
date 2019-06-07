@@ -1,5 +1,7 @@
 # Gamecelerator 2019 - Team Klementine.
 
+<img src="https://i.imgur.com/XRRRPRc.png" />
+
 ## Project Description
 The Emperor’s Son is a 2D action game. You play as a great warrior, Klemenori Raven, who is looking for revenge against evil. You rely on modern weapons, magic swords or spells in order to crush your enemies. As you explore the future, you need to choose between the dark path and the noble one. Don’t forget, young samurai, your choices are important and change the world.
 
