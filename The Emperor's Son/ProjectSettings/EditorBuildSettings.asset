@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/SampleScenes/DeathMenu.unity
     guid: 4cde513362586014fbc98a82f4d0021f
+  - enabled: 1
+    path: Assets/SampleScenes/UpSideDown.unity
+    guid: 6c13c3c8da24c9f40920a4f6da63f549
+  - enabled: 1
+    path: Assets/SampleScenes/WinMenu.unity
+    guid: d3d0721fc83743343943620e22dff8c0
   m_configObjects: {}

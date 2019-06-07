@@ -433,7 +433,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a2db84d24a0404ba18759b60d4396a43, type: 2}
+      objectReference: {fileID: 2100000, guid: ac51ba5f050dad148acf551b3bedd194, type: 2}
     - target: {fileID: 4345521308141680, guid: f335125bf07c64254b97f0daca647e65, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.82
@@ -474,7 +474,7 @@ PrefabInstance:
     - target: {fileID: 114436119277281600, guid: f335125bf07c64254b97f0daca647e65,
         type: 3}
       propertyPath: jumpTakeOffSpeed
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 114436119277281600, guid: f335125bf07c64254b97f0daca647e65,
         type: 3}
@@ -499,7 +499,7 @@ PrefabInstance:
     - target: {fileID: 114436119277281600, guid: f335125bf07c64254b97f0daca647e65,
         type: 3}
       propertyPath: maxSpeed
-      value: 3.68
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114436119277281600, guid: f335125bf07c64254b97f0daca647e65,
         type: 3}
@@ -560,8 +560,14 @@ PrefabInstance:
     - target: {fileID: 114061842827230088, guid: f335125bf07c64254b97f0daca647e65,
         type: 3}
       propertyPath: initialSkinName
-      value: Enemy
+      value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 114061842827230088, guid: f335125bf07c64254b97f0daca647e65,
+        type: 3}
+      propertyPath: skeletonDataAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 569583658f992cd4a913911c73503364,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f335125bf07c64254b97f0daca647e65, type: 3}
 --- !u!4 &3426428943350643314 stripped

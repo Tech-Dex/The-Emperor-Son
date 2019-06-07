@@ -9,7 +9,7 @@ public class DeathButton : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] AnimatorFunctionsMenu animatorFunctions;
     [SerializeField] int thisIndex;
-
+    [SerializeField] bool isWinMenu;
     // Update is called once per frame
     void Update()
     {
@@ -21,8 +21,11 @@ public class DeathButton : MonoBehaviour
                 animator.SetBool("pressed", true);
                 StartCoroutine(Coroutine());
                 if (thisIndex == 0)
-                {
-                    SceneManager.LoadScene("EndlessMode");
+                {   
+                    if(!isWinMenu)
+                        SceneManager.LoadScene("EndlessMode");
+                    else
+                        SceneManager.LoadScene("Level1");
                 }
                 if (thisIndex == 1)
                 {

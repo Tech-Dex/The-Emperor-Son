@@ -39,26 +39,26 @@ public class EnemySpawnerScript : MonoBehaviour
             {
                 randX = Random.Range(-93, -78);
                 whereToSpawn = new Vector2(randX, -3);
-                randompower = Random.Range(1, 4);
-                if(randompower == 1)
+                randompower = Random.Range(1, 2000);
+                if(randompower % 4 == 0)
                 Instantiate(hppowerup, whereToSpawn, Quaternion.identity).transform.SetParent(GameObject.Find("Interactables").transform);
-                if (randompower == 2)
+                if (randompower % 4 == 1)
                 Instantiate(speedpowerup, whereToSpawn, Quaternion.identity).transform.SetParent(GameObject.Find("Interactables").transform);
-                if (randompower == 3)
+                if (randompower % 4 == 2)
                 Instantiate(regenhppowerup, whereToSpawn, Quaternion.identity).transform.SetParent(GameObject.Find("Interactables").transform);
-                if (randompower == 4)
+                if (randompower % 4 == 3)
                 Instantiate(jumppowerup, whereToSpawn, Quaternion.identity).transform.SetParent(GameObject.Find("Interactables").transform);
             }
             nextSpawn = Time.time + spawnRate;
             randX = Random.Range(-18, 20);
             randY = Random.Range(2, 12);
             whereToSpawn = new Vector2(randX, randY);
-            randomspawn= Random.Range(1, 3);
-            if (randomspawn == 1)
+            randomspawn= Random.Range(1, 2000);
+            if (randomspawn % 3 == 0)
             Instantiate(enemy, whereToSpawn, Quaternion.identity).transform.SetParent(GameObject.Find("Interactables").transform); ;
-            if (randomspawn == 2)
+            if (randomspawn % 3 == 1)
                 Instantiate(enemy2, whereToSpawn, Quaternion.identity).transform.SetParent(GameObject.Find("Interactables").transform); ;
-            if (randomspawn == 3)
+            if (randomspawn % 3 == 2)
                 Instantiate(enemy3, whereToSpawn, Quaternion.identity).transform.SetParent(GameObject.Find("Interactables").transform); ;
             enemyCount++;
         }
