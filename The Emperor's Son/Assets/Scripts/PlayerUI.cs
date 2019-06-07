@@ -53,7 +53,7 @@ public class PlayerUI : MonoBehaviour {
 
 		float TeleportTimer = (float)GameManager.Instance.TeleportTimer;
 		if (TeleportTimer == 0 )
-			TeleportMesh.text = "READY";
+			TeleportMesh.text = " ";
 		else
 			TeleportMesh.text = Mathf.Round(TeleportTimer).ToString();
 		TeleportSmooth -= (TeleportTimer-TeleportSmooth) * Time.deltaTime * TeleportEase;

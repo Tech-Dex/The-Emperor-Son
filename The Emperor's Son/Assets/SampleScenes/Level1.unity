@@ -2092,7 +2092,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 293.9, y: -17.400085}
+  m_AnchoredPosition: {x: 320, y: -17.400085}
   m_SizeDelta: {x: 527.8, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &153839606
@@ -2645,8 +2645,8 @@ MonoBehaviour:
   animator: {fileID: 571285609}
   textDisplay: {fileID: 1324324588}
   sentences:
-  - Pentru a deschide poarte ai nevoie de toate talismanele lumii -> 3
-  typingSpeed: 0.1
+  - Be careful, once you've engaged into the boss fight, you will not be able to run.
+  typingSpeed: 0.075
   ok: 1
   icon: {fileID: 906092501}
 --- !u!61 &179296644
@@ -11406,8 +11406,8 @@ MonoBehaviour:
   animator: {fileID: 571285609}
   textDisplay: {fileID: 1324324588}
   sentences:
-  - Oh shit, here we  go again
-  typingSpeed: 0.1
+  - Collect all 3 tokens to unlock the gate of this level.
+  typingSpeed: 0.075
   ok: 1
   icon: {fileID: 736045059}
 --- !u!61 &488944367
@@ -12550,6 +12550,80 @@ PrefabInstance:
     - {fileID: 1088965559617320634, guid: 3c614e9cd35bf468b8d2f1689cc4cca8, type: 3}
     - {fileID: 1120576110, guid: 3c614e9cd35bf468b8d2f1689cc4cca8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3c614e9cd35bf468b8d2f1689cc4cca8, type: 3}
+--- !u!1 &557635244
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 557635247}
+  - component: {fileID: 557635246}
+  - component: {fileID: 557635245}
+  m_Layer: 5
+  m_Name: TMP SubMeshUI [Anton SDF Material + LiberationSans SDF Atlas]
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &557635245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557635244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_spriteAsset: {fileID: 0}
+  m_material: {fileID: 0}
+  m_sharedMaterial: {fileID: 0}
+  m_isDefaultMaterial: 0
+  m_padding: 1.25
+  m_canvasRenderer: {fileID: 557635246}
+  m_TextComponent: {fileID: 2027293403}
+  m_materialReferenceIndex: 1
+--- !u!222 &557635246
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557635244}
+  m_CullTransparentMesh: 0
+--- !u!224 &557635247
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557635244}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2027293402}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &563928742
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32563,7 +32637,7 @@ PrefabInstance:
     - target: {fileID: 114679041639389540, guid: b022250573709434c9737ce47e1017e3,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.05490196
+      value: 0.054901965
       objectReference: {fileID: 0}
     - target: {fileID: 114679041639389540, guid: b022250573709434c9737ce47e1017e3,
         type: 3}
@@ -32573,7 +32647,7 @@ PrefabInstance:
     - target: {fileID: 114679041639389540, guid: b022250573709434c9737ce47e1017e3,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.9137255
+      value: 0.91372555
       objectReference: {fileID: 0}
     - target: {fileID: 114679041639389540, guid: b022250573709434c9737ce47e1017e3,
         type: 3}
@@ -32620,6 +32694,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114764480621089814, guid: b022250573709434c9737ce47e1017e3,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.19607843
       objectReference: {fileID: 0}
     - target: {fileID: 114821156447185322, guid: b022250573709434c9737ce47e1017e3,
         type: 3}
@@ -47616,7 +47695,8 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 557635247}
   m_Father: {fileID: 152892820}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47647,9 +47727,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 45
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e195823e8ca724113ae5c301839c7089, type: 2}
-  m_sharedMaterial: {fileID: 21190894904719822, guid: e195823e8ca724113ae5c301839c7089,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
+  m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -47729,7 +47808,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_subTextObjects:
   - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 557635245}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -48839,8 +48918,9 @@ MonoBehaviour:
   animator: {fileID: 571285609}
   textDisplay: {fileID: 1324324588}
   sentences:
-  - Urmatorul nivel va fi influentat de numarul inamici pe care ii omori
-  typingSpeed: 0.1
+  - It's not a good idea to dodge fighting. Based on how many enemies you've killed,
+    the next level will be different.
+  typingSpeed: 0.075
   ok: 1
   icon: {fileID: 1149409220}
 --- !u!61 &2126133980
