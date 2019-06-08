@@ -1,4 +1,4 @@
-# Gamecelerator 2019 - Team Klementine.
+# Gamecelerator 2019 - Team Klementine - 1st Place Winner
 
 <img src="https://i.imgur.com/XRRRPRc.png" />
 
